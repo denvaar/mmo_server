@@ -12,9 +12,8 @@ defmodule AdventureServer.Application do
       AdventureServer.Repo,
       # Start the endpoint when the application starts
       AdventureServerWeb.Endpoint,
-      AdventureServerWeb.Presence
       # Starts a worker by calling: AdventureServer.Worker.start_link(arg)
-      # {AdventureServer.Worker, arg},
+      {AdventureServerWeb.PlayerTracker, [name: AdventureServerWeb.PlayerTracker, pubsub_server: AdventureServer.PubSub]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
